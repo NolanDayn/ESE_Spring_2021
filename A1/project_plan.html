@@ -4,31 +4,36 @@
         <title>Project Plan</title>
         <meta name='description' content='Page in project'/>
         <meta name='robots' content='noindex nofollow'/>
-        <meta http-equiv='author' content='mgalle'/>
+        <meta http-equiv='author' content='Nolan'/>
         <meta http-equiv='pragma' content='no-cache'/>
 
-        <link href='css/style1.css' type='text/css' rel='stylesheet'/>
+        <link href="css/main_style.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
-        <h1>Project Plan Breakdown - By Week</h1>
+		<h1>Project Plan</h1>
+		<br>
+		<h3>Specifications & References</h3>
+		<h4><a href="/references/">Click to open a folder</a></h4>
+
+	    <h2>Project Plan Breakdown - By Week</h2>
         <ol>
-            <li class='week-headings'>Design CAN Messaging protocol</li>
-            <li class='week-headings'>Plan CAN node configuration</li>
-            <ul>
-                <li id='mike'>Michael - Research</li>
-                <li id='ali'>Ali - implementation of CAN nodes</li>
-            </ul>
-            <li class='week-headings'>Develop a user interface (webpage/web app) for remote control</li>
-            <li class='week-headings'>Develop a user interface (webpage/web app) for remote control</li>
-            <li>Develop a user interface (webpage/web app) for remote control</li>
-            <li>Develop a complete internet based remote access system</li>
-            <li>Develop a user interface (webpage/web app) for remote control</li>
-            <li>Develop a user interface (webpage/web app) for remote control</li>
-            <li>Develop a user interface (webpage/web app) for remote control</li>
-            <li>Develop a complete internet based remote access system</li>
+            <li class='week-headings'>Create Github Repo and Drive for Project</li>
+            <li class='week-headings'>Configure CAN with programmable filters and loopback mode on STM32</li>
+            <li class='week-headings'>Design user interface for remote control</li>
+			<li class='week-headings'>Code user interface for remote control</li>
+            <li class='week-headings'>Design State machine for elevator operation</li>
+			<li class='week-headings'>Get video streaming from the camera in the lab to the site</li>
+			<li class='week-headings'>Design and implement elevator database</li>
+			<li class='week-headings'>Add login authetication to the site</li>
+			<li class='week-headings'>Announce floor numbers</li>
+			<li class='week-headings'>Display usage reports and diagnostics</li>
         </ol>
 
-        <h2>Gantt Chart</h2>
+        
+        <hr />
+        <br />
+
+		<h2>Gantt Chart</h2>
         <table>
 			<thead>
 				<tr>
@@ -52,9 +57,9 @@
 			<tbody>
 				<tr>
 					<th>Task 1</th>
+					<td class="nt" colspan="1">NT</td>
 					<td></td>
 					<td></td>
-					<td colspan="7" class="mg">MG</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -63,56 +68,60 @@
 				</tr>
 				<tr>
 					<th>Task 2</th>
-					<td class="js">JS</td>
-					<td colspan="13"></td>
+					<td class="nt" colspan="2">NT</td>
+					<td></td>
 				</tr>
 				<tr>
 					<th>Task 3</th>
-					<td colspan="2"></td>
-					<td colspan="5" class="at">AT</td>
-					<td colspan="7"></td>
+					<td class="sd"colspan="3">SD</td>
+					<td></td>
 				</tr>
 				<tr>
 					<th>Task 4</th>
-					<td></td>
-					<td colspan="10" class="js">JS</td>
+					<td colspan="3"></td>
+					<td colspan="7" class="sd">SD</td>
 					<td colspan="3"></td>
 				</tr>
 				<tr>
 					<th>Task 5</th>
-					<td colspan="10"></td>
-					<td colspan="4" class="at">AT</td>
+					<td colspan="3"></td>
+					<td colspan="1" class="rp">RP</td>
 				</tr>
 				<tr>
 					<th>Task 6</th>
-					<td colspan="12"></td>
-					<td colspan="2" class="mg">MG</td>
+					<td colspan="3"></td>
+					<td colspan="2" class="nt">NT</td>
 				</tr>
 				<tr>
 					<th>Task 7</th>
-					<td colspan="11"></td>
-					<td colspan="3" class="js">JS</td>
+					<td colspan="3"></td>
+					<td colspan="7" class="rp">RP</td>
+				</tr>
+				<tr>
+					<th>Task 8</th>
+					<td colspan="6"></td>
+					<td colspan="2" class="sd">SD</td>
+				</tr>
+				<tr>
+					<th>Task 9</th>
+					<td colspan="7"></td>
+					<td colspan="2" class="nt">NT</td>
+				</tr>
+				<tr>
+					<th>Task 10</th>
+					<td colspan="8"></td>
+					<td colspan="3" class="rp">RP</td>
 				</tr>
 			</tbody>
 			<tfoot>
 				<tr>
-					<th colspan="15">MG = Michael Galle, JS = Jim Smith, AT = Ali Tehrani</th>
+					<th colspan="15">NT = Nolan Thomas, SD = Stephane Durette, RP = Ruchi Patil</th>
 				</tr>
 			</tfoot>
 		</table>
 		<br /><br /><br /><br />
 
-        <hr />
-        <br />
 
-
-        <iframe
-            width='960'
-            height='600'
-            src='https://docs.google.com/spreadsheets/d/1s8oIDvPxtXDu_DtHRxscbSrgORW-lEvsAaSLigeneJA/edit?usp=sharing'
-            allowfullscreen        >
-        </iframe>
-
-        <p>Copyright &copy Michael Galle</p>
+        <p>Copyright &copy Nolan Thomas</p>
     </body>
 </html>
