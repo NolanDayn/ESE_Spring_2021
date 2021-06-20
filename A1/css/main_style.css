@@ -1,0 +1,55 @@
+header, section, footer, aside, nav, article, figure { display: block}
+
+html{
+    background-color: #a8b3c7;
+}
+
+body{
+    font-family: Georgia, serif;
+    width: 950px;
+    padding: 10px;
+    border: 2px black solid;
+    margin: 10px auto 0px auto;
+    background-color: whitesmoke;
+}
+
+input{
+    margin-top: 10px;
+}
+
+button{
+    margin-top: 10px;
+    background-color: steelblue;
+    color: whitesmoke;
+    font-size: 1.2em;
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+button:active {
+    transition: .5s ease;
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 0 5px rgba(0,0,0,0.24);
+    transform: translateY(4px);
+}
+
+#submit{
+    font-size: 1.2em;
+    margin-top: 10px;
+    background-color: rgb(88, 207, 88);
+}
+
+header{
+    width: 900px;
+    padding: 10px;
+    border: 2px black solid;
+    margin: 0px auto 0px auto;
+}
+
+.menu{
+    display: inline-block;
+    margin: 0px 10px 0px 10px;
+}

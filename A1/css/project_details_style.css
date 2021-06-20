@@ -1,9 +1,14 @@
+html{
+    background-color: #a8b3c7;
+}
+
 body{
     font-family: Georgia, serif;
     width: 950px;
     padding: 10px;
     border: 2px black solid;
-    margin: 0px auto 0px auto;
+    margin: 10px auto 0px auto;
+    background-color: whitesmoke;
 }
 
 h1{
@@ -32,6 +37,7 @@ img{
     margin-left: auto;
     margin-right: auto;
     border: 2px solid blue;
+    box-shadow: 10px 10px 5px gray;
 }
 
 figure{
@@ -39,6 +45,7 @@ figure{
     margin-left: auto;
     margin-right: auto;
     border: 2px solid green;
+    border-radius: 25px;
 }
 
 figcaption{
