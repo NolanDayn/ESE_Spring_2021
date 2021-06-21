@@ -13,7 +13,7 @@
     <body>
         <h1>Request Access</h1>
 		<!-- Took out action="php/req_access.php" method="post" from form as PHP doesnt work when hosted by github-->
-        <form >
+        <form onsubmit="return validateInput()">
 			<fieldset>
 				<legend>Contact Details</legend>
 				<div>
@@ -56,7 +56,7 @@
 			<label><input type="checkbox" name="involvement" value="external" /> An external reviewer </label><br />
 			
 			<p>Do you drive a car?
-			<select name="drives_car">
+			<select id="drives_car">
 				<option value="no_answer" selected></option>
 				<option value="yes">Yes</option>
 				<option value="no">No</option>
@@ -66,12 +66,11 @@
 			<div>
 				<p>Tell us a bit about yourself</p>
 				<textarea id="comments" name="comments" class="text" onchange="checkLength()">Please enter your comments here ...</textarea><br />
-				<input id="submit" type="submit" value="Submit Request" onclick="validateInput()" />
+				<p id='feedback'></p>
+				<input id="submit" type="submit" value="Submit Request" />
 			</div>
 		</form>
 		<br />
-
-		<p id="errorLog"></p>
 
 		<footer>
 			<div class='row'>

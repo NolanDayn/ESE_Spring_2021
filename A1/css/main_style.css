@@ -58,3 +58,10 @@ header{
     color: red;
     font-weight: bold;
 }
+
+#date{
+    font-family: fantasy;
+    width: 400px;
+    padding: 10px;
+    margin: 10px auto 0px auto;
+}
