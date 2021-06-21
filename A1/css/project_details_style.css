@@ -69,3 +69,15 @@ figcaption{
 #can{
     font-weight: bold;
 }
+
+.menu{
+    display: inline-block;
+    margin: 0px 10px 0px 10px;
+}
+
+header{
+    width: 900px;
+    padding: 10px;
+    border: 2px black solid;
+    margin: 0px auto 0px auto;
+}
