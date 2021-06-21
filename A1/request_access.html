@@ -12,7 +12,8 @@
     </head>
     <body>
         <h1>Request Access</h1>
-        <form action="php/req_access.php" method="post">
+		<!-- Took out action="php/req_access.php" method="post" from form as PHP doesnt work when hosted by github-->
+        <form >
 			<fieldset>
 				<legend>Contact Details</legend>
 				<div>
@@ -64,11 +65,14 @@
 			
 			<div>
 				<p>Tell us a bit about yourself</p>
-				<textarea name="comments" class="text">Please enter your comments here ...</textarea><br />
-				<input id="submit" type="submit" value="Submit Request" />
+				<textarea id="comments" name="comments" class="text" onchange="checkLength()">Please enter your comments here ...</textarea><br />
+				<input id="submit" type="submit" value="Submit Request" onclick="validateInput()" />
 			</div>
 		</form>
 		<br />
+
+		<p id="errorLog"></p>
+
 		<footer>
 			<div class='row'>
 				<div class='col-xs-12'>
@@ -78,5 +82,6 @@
 			</div>
 			
 		</footer>
+		<script src='JS/req_access.js'></script>
     </body>
 </html>
