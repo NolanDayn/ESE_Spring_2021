@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 class elecar {
@@ -28,3 +29,6 @@ class elecar {
 }
 
 ?>
+=======
+fgsdgs
+>>>>>>> b87635fff051f92ce16037ea0cbfc7fbff1b9d82
