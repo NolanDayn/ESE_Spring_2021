@@ -5,12 +5,17 @@ class floor {
     public $direction;
     public $closed;
 
+    public function __construct($currfloor, $dir, $closed) {
+        $this->curr_floor = $currfloor;
+        $this->direction = $dir;
+        $this->closed = $closed;
+    } 
     function doors_open($closed){
-        $this->$closed = false;
+        $this->$closed = 0;
     }
 
     function doors_close($closed){
-        $this->closed = true;
+        $this->closed = 1;
     }
 }
 
