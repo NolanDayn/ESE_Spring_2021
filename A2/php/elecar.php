@@ -1,10 +1,10 @@
 <?php
 
 class elecar {
-    public $curr_floor;
-    public $dest_floor;
-    public $closed;
-    public $moving;
+    public $curr_floor; //any INT
+    public $dest_floor; //any INT
+    public $closed; //1=CLOSED, 0=OPEN
+    public $moving; //1=MOVING, 0=IDLE
 
     public function __construct ($currfloor, $destfloor, $closed, $moving){
         $this->curr_floor = $currfloor;
@@ -14,20 +14,20 @@ class elecar {
     }
 
     function move_up() {
-        $this->moving = 1;
-        $this->closed = 1;
+        $this->moving = TRUE;
+        $this->closed = TRUE;
         $this->curr_floor++;
     }
 
     function move_down() {
-        $this->moving = 1;
-        $this->closed = 1;
+        $this->moving = TRUE;
+        $this->closed = TRUE;
         $this->curr_floor--;
     }
 
     function open(){
-        $this->moving = 0; 
-        $this->closed = 0;
+        $this->moving = FALSE; 
+        $this->closed = FALSE;
     }
 }
 
