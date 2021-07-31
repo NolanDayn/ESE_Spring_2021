@@ -98,10 +98,10 @@
         $rows = $db->query("SELECT * FROM elevatorinternet WHERE 1");
         echo "<table>";
         echo "<tr>";
-        echo "<td> USER ID </td>";
-        echo "<td> REQUEST </td>";
-        echo "<td> REQUEST TIME </td>";
-        echo "<td> REQUEST STATUS </td>";
+        echo "<td> userID </td>";
+        echo "<td> request </td>";
+        echo "<td> requestTime </td>";
+        echo "<td> requestStatus </td>";
         echo "</tr>";
         foreach($rows as $row) {
             echo "<tr>";
@@ -114,21 +114,47 @@
         echo "</table>";
     }
 
+    function deleteRow($selector, $value){
+
+        try{
+            $db = new PDO(
+                'mysql:host=127.0.0.1;dbname=elevator_network',     // Database name either 'elevator' or 'joinExample'
+                'root',                                 // username
+                ''                                // Password
+            );
+    
+            // Boilerplate - Return arrays with keys that are the field names in the database - Call the PDO method setAttribute()
+            $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        
+        } catch(PDOException $e){
+            echo "Connection to DB Failed: " . $e->getMessage();
+        }
+
+        //We will only let the user delete from the request table to keep things safe
+        // Use transactions 
+        $db->beginTransaction();      
+        try {
+            //Add a new floor request to elevator_network internet table
+            $query = "DELETE FROM elevatorInternet WHERE $selector=:value"; 
+            $statement = $db->prepare($query); 
+            $params = [
+               'value' => $value
+           ];
+           $statement->execute($params);
+
+            $db->commit(); 
+             
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            $db->rollBack(); 
+        }
+    }
+
     session_start();
     //changeFloor(1);
     //insertNewRequest(2);
     //showrequestTable();
-
-    if(isset($_POST['submitInsert'])){
-        echo "Data Inserted"
-    }
-    
-    if(isset($_POST['submitChange'])){
-        echo "Data Changed"
-    }
-    
 ?>
-
 <h1>Hello <?php echo  $_SESSION["username"]; ?></h1>
 <h2>Successful Login</h3>
 
@@ -136,7 +162,7 @@
 <form method="post">
     <label for="ffloor">Floor:</label><br>
     <input type="text" id="ffloor" name="ffloor"><br>
-    <input type="submit" value="submitInsert">
+    <input type="submit" name="submitInsert" value="Submit">
 </form>
 <h3>Change an Data </h3>
 <form method="post">
@@ -144,16 +170,38 @@
     <input type="text" id="ftable" name="ftable"><br>
     <label for="fcolumn">Column:</label><br>
     <input type="text" id="fcolumn" name="fcolumn"><br>
+    <label for="fselector">Selector:</label><br>
+    <input type="text" id="fselector" name="fselector"><br>
     <label for="fid">ID:</label><br>
     <input type="text" id="fid" name="fid"><br>
     <label for="fvalue">Value:</label><br>
     <input type="text" id="fvalue" name="fvalue"><br>
-    <input type="submit" value="submitChange">
+    <input type="submit" name="submitChange" value="Submit">
 
 </form>
 <h3>Delete Data</h3>
 <form method="post">
-    <label for="ffloor">Floor:</label><br>
-    <input type="text" id="ffloor" name="ffloor"><br>
-    <input type="submit" value="submitDelete">
+    <label for="fwhere">Where:</label><br>
+    <input type="text" id="fwhere" name="fwhere"><br>
+    <label for="fequals">Equals:</label><br>
+    <input type="text" id="fequals" name="fequals"><br>
+    <input type="submit" name="submitDelete" value="Submit">
 </form>
+
+<?php
+    if(isset($_POST['submitInsert'])){
+        insertNewRequest($_POST['ffloor']);
+        showrequestTable();
+    }
+    
+    if(isset($_POST['submitChange'])){
+        update_elevatorNetwork($_POST['ftable'], $_POST['fcolumn'], $_POST['fselector'], $_POST['fid'], $_POST['fvalue']);
+        showrequestTable();
+    }
+
+    if(isset($_POST['submitDelete'])){
+        deleteRow($_POST['fwhere'],$_POST['fequals']);
+        showrequestTable();
+    }
+    
+?>
