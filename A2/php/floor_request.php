@@ -1,9 +1,18 @@
 <?php
 include('elecar.php');
-include('floor.php');
+include('floor_req.php');
 
-$floor_stat = new Floor_Req(4, TRUE, TRUE);
-$ele_stat = new elecar(2, $floor_stat->curr_floor, TRUE, FALSE);
+function checkit($eledest, $floor) {
+    if (($eledest > 3 || $floor > 3) || ($eledest < 1 || $floor < 1)) {
+        throw new Exception("There cant be more than 3 floors");
+    }
+    return true;
+}
+
+$floor_stat = new Floor_Req($_POST["floor"], $_POST["dir"], TRUE);
+$ele_stat = new elecar($_POST["elefloor"], $floor_stat->curr_floor, TRUE, FALSE);
+
+checkit($floor_stat->curr_floor, $ele_stat->dest_floor);
 
 while ($ele_stat->curr_floor != $ele_stat->dest_floor) {
 
