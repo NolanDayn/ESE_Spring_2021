@@ -157,6 +157,7 @@
 ?>
 <h1>Hello <?php echo  $_SESSION["username"]; ?></h1>
 <h2>Successful Login</h3>
+<a href="../uml_class_stuff/uml_page.php">Diagram stuff</a>
 
 <h3>Insert a New Request</h3>
 <form method="post">
